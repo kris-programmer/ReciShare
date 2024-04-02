@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ReciShare.Views.RecipesPage"
+             xmlns:viewmodels="clr-namespace:ReciShare.ViewModels"
+             Title="Your recipies"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls">
+    <ContentPage.BindingContext>
+        <viewmodels:RecipesPageViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <Grid RowDefinitions="*" ColumnDefinitions="*">
+        <CollectionView SelectionMode="Single" 
+                        SelectionChanged="CollectionView_SelectionChanged" 
+                        ItemsSource ="{Binding Recipes}"
+                        ItemsLayout="VerticalList"
+                        SelectedItem="{Binding SelectedRecipe, Mode=TwoWay}"
+                        Grid.Row="1">
+            <CollectionView.EmptyView>
+                <Label HorizontalOptions="Center" Text="No Recipes"></Label>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView android:SwipeView.SwipeTransitionMode="Drag">
+                        <Grid Padding="10">
+                            <Frame CornerRadius="20" HasShadow="True">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame>
+                                        <Image Source="{Binding Image}" WidthRequest="75"/>
+                                    </Frame>
+
+                                    <StackLayout VerticalOptions="Center">
+                                        <Label FontSize="Large"
+                                                   FontAttributes="Bold"
+                                                   Text="{Binding Name}"
+                                                   VerticalOptions="Center"/>
+                                        <Label FontSize="Large"
+                                                   FontAttributes="Italic"
+                                                   Text="{Binding Description}"
+                                                   VerticalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <StackLayout Grid.Row="2" Padding="10" Orientation="Vertical" HorizontalOptions="End" VerticalOptions="End">
+            <Button BackgroundColor="Green" Text="Add a Recipe" Clicked="CreateARecipe_Clicked"></Button>
+        </StackLayout>
+    </Grid>
+</ContentPage>
