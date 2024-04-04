@@ -14,10 +14,6 @@
         </Tab>
         <Tab Title="Recipes"
             Icon="info.png">
-            <ShellContent ContentTemplate="{DataTemplate local:RecipesPage}" />
-        </Tab>
-        <Tab Title="Recipes"
-            Icon="info.png">
             <ShellContent ContentTemplate="{DataTemplate local:MyStoredRecipesPage}" />
         </Tab>
     </TabBar>

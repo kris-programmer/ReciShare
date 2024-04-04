@@ -4,13 +4,13 @@
              xmlns:model="clr-namespace:ReciShare.Models"
              x:Class="ReciShare.Views.RecipeDetailsPage"
              x:DataType="model:Recipe"
-             Title="RecipeDetailsPage">
+             Title="{Binding Name}">
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Label Text="{Binding Name, StringFormat='Name: {0}'}" />
-            <Label Text="{Binding Description,StringFormat='Description: {0}'}" />
             <Image HorizontalOptions="Center"
-                   Source="{Binding Image}"/>
+            Source="{Binding Image}"/>
+            <Label Text="{Binding Description,StringFormat='Description: {0}'}"/>
+            
 
             <Button Text="Done" Clicked="Button_Clicked"/>
         </StackLayout>

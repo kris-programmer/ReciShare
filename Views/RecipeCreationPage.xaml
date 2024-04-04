@@ -12,10 +12,14 @@
     <ContentPage.Content>
         
         <StackLayout Padding="20">
-            <Label Text="Name:" />
-            <Entry Text="{Binding Name}"/>
-            <Label Text="Roaster:" />
-            <Entry Text="{Binding Roaster}"/>
+            <Label Text="Recipe Name:" />
+            <Entry Text="{Binding Name}"
+                   Placeholder="Enter your recipe name here"/>
+            <Label Text="Recipe:" />
+            <Editor Text="{Binding Description}"
+                   Placeholder="Enter your recipe here"
+                   MinimumHeightRequest="500"
+                   VerticalTextAlignment="Start"/>
 
             <ActivityIndicator IsVisible="{Binding IsBusy}"
                                IsRunning="{Binding IsBusy}"

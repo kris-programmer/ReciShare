@@ -13,7 +13,7 @@ namespace ReciShare.ViewModels
     {
         string name, description;
         public string Name { get => name; set => SetProperty(ref name, value); }
-        public string Roaster { get => description; set => SetProperty(ref description, value); }
+        public string Description { get => description; set => SetProperty(ref description, value); }
 
         public AsyncCommand SaveCommand { get; }
 
