@@ -61,14 +61,6 @@
                                         FontSize="Large"
                                         Text="{Binding Name}"
                                         VerticalOptions="Center" />
-                                    <Label
-                                        FontSize="Large"
-                                        Text="{Binding Description}"
-                                        VerticalOptions="Center" />
-                                    <Label
-                                        FontSize="Small"
-                                        Text="{Binding Id}"
-                                        VerticalOptions="Center" />
                                 </StackLayout>
                             </StackLayout>
                         </Frame>

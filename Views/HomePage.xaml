@@ -2,19 +2,28 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ReciShare.Views.HomePage"
-             Title="ReciShare">
-    <VerticalStackLayout>
-        <Frame BackgroundColor="Green">
+             Shell.NavBarIsVisible="False"
+             Title="">
+    <VerticalStackLayout Spacing="30">
+        <Frame BackgroundColor="LightGreen">
             <Label 
             Text="Welcome to ReciShare!"
+            FontSize="30"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         </Frame>
 
-        <Label Text="Click the button below to create a recipe:" 
-               VerticalOptions="Center" 
-               HorizontalOptions="Center"/>
+        <Label VerticalOptions="Center" 
+               Padding="15,0,0,0"
+               HorizontalOptions="Center">
+        <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Click on the Recipes tab to see and edit all your recipes!"/>
+                    <Span Text="Alternatively, click the button below to create a quick recipe:" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
 
-        <Button Text="Create a new Recipe" Clicked="CreateARecipe_Clicked"/>
+        <Button Text="Create a new Recipe" Clicked="CreateARecipe_Clicked" VerticalOptions="EndAndExpand"/>
     </VerticalStackLayout>
 </ContentPage>

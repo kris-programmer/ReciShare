@@ -26,12 +26,18 @@
                                HorizontalOptions="Center"
                                VerticalOptions="Center"/>
 
-            <Button Text="Save" 
+            <Button Text="Create recipe" 
                     Padding="20,0"
                     HorizontalOptions="Center"
                     VerticalOptions="EndAndExpand"
                     IsEnabled="{Binding IsNotBusy}"
                     Command="{Binding SaveCommand}"/>
+            <Button 
+                Text="Cancel" 
+                Padding="20,0"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Clicked="CancelButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -11,4 +11,9 @@ public partial class RecipeCreationPage : ContentPage
         InitializeComponent();
         Shell.SetTabBarIsVisible(this, false);
     }
+
+    private async void CancelButton_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("..");
+    }
 }
